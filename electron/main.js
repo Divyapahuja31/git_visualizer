@@ -1,4 +1,4 @@
-const { app, BrowserWindow,ipcMain } = require('electron')
+const { app, BrowserWindow,ipcMain ,dialog } = require('electron')
 
 const path = require('path')
 
@@ -11,6 +11,16 @@ const createWindow = () => {
       contextIsolation:true,
       nodeIntegration:false
     }
+  })
+  ipcMain.handle('select-repo',async()=>{
+    const result = await dialog.showOpenDialog({
+      properties: ['openFile', 'openDirectory']
+    });
+    console.log(result.canceled)
+    if (result.canceled){
+      return null
+    }
+    return result.filePaths[0]
   })
 
   win.loadURL('http://localhost:5173/')

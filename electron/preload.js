@@ -1,5 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  test:()=>"test completed"
+  selectRepo:()=> ipcRenderer.invoke("select-repo")
+
 }) 
