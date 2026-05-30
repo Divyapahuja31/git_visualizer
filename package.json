@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "electron"
+    "electron": "electron ."
   },
   "dependencies": {
     "@xyflow/react": "^12.10.2",
@@ -32,4 +32,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-}
+} 

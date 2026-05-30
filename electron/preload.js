@@ -1,5 +1,5 @@
-const { contextBridge, ipcRenderer } = require('electron/renderer')
+const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  getData: (repoPath) => ipcRenderer.send('get-data', repoPath)
+  test:()=>"test completed"
 }) 
